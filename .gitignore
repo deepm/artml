@@ -1,0 +1,8 @@
+# FK's pem file to ignore
+
+## the initial pem
+art-ml-project1.pem
+
+## the pem that will be used in development
+art_ml_t2_micro.pem
+
