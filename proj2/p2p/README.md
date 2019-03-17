@@ -5,7 +5,7 @@
 
 3. Place your source images into the **customizedImg/sourceImg** folder 
 
-##**if your files are in png format, place them under customizedImg/sourceImg/png**
+### if your files are in png format, place them under customizedImg/sourceImg/png
    
 4. Open a new terminal to transer the project to AWS EC2
  
@@ -20,7 +20,7 @@
 
 # Get Edge Image
 
-## **make sure files are in jpg format**
+### make sure files are in jpg format
 
 1. Place all images in **customizedImg/sourceImg**
 2. Run **canny_edge_detection.ipynb**
@@ -41,7 +41,7 @@
 
 # Get Output
 
-## **Make sure you have trained your model. If the session dies, you may need to retrain your model**
+### Make sure you have trained your model. If the session dies, you may need to retrain your model
 
 1. Place outline images into **datasets/customizedImg/test/outlines**
 2. Run **duplicate_input_img.ipynb**
