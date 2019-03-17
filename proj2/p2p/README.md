@@ -25,6 +25,7 @@
 2. Run **canny_edge_detection.ipynb**
 3. Result files will be in **customizedImg/combinedImg**
 4. Run **move_from_combinedImg_to_train_val.ipynb** to place combined images to train and val folders
+      
       Mode:firstX will move the first X [mvFileNum] files (in alphabetical order) to train folder
       Mode:unordered will move [mvFileNum] files (not in order) to train folder
       mvFileNum is default to 400. Make sure this is half of your data size
