@@ -46,6 +46,8 @@
 1. Place outline images into **datasets/customizedImg/test/outlines**
 2. Run **duplicate_input_img.ipynb**
 3. Run block **25 - 28** to get your output
+4. To get your result add the code **`showX(fakeB)`** at the very last line
+5. Once the result shows up, right-click and **`save image`**
 
 **Change the batch input according to the number of outline images you have**
 ![alt text](https://github.com/deepm/artml/blob/master/proj2/p2p/documentImg/Capture.PNG)
