@@ -30,3 +30,11 @@
 
 1. Place images into the **customizedImg/train** and **customizedImg/val** folders (Should have equal number of iamges in each folder)
 2. Run **pix2pix-keras.ipynb**
+
+# Get Output
+**Make sure you have trained your model. If the session dies, you may need to retrain your model**
+1. Place outline images into **datasets/customizedImg/test/outlines**
+2. Run **duplicate_input_img.ipynb**
+3. Run block **25 - 28** to get your output
+**Change the batch input according to the number of outline images you have**
+![alt text](https://github.com/deepm/artml/blob/master/proj2/p2p/documentImg/Capture.PNG)
