@@ -22,7 +22,7 @@ class RecipeParser(HTMLParser):
     def handle_data(self, data):
         
         if self.flag:
-            self.data.append(data)
+            self.data.append(data.strip())
 
     def handle_endtag(self, tag):
         if self.flag:
@@ -39,15 +39,16 @@ def sendRequest(url):
 
 def writeFile(output, filename):
 
-    with open("recipes/recipe"+str(filename)+".txt",'w') as f:
+    with open("recipes/recipe"+filename+".txt",'w') as f:
 
         f.write(output)
 
 
 failCount = 0
-pageID = 7059
+pageID = 8128
 
 while failCount < 100:
+    filename = str(pageID)
     print(pageID, failCount)
     result = sendRequest("https://www.allrecipes.com/recipe/{}/dirt-cake-i/print/?recipeType=Recipe&servings=10&isMetric=false".format(pageID))
     pageID += 1
@@ -60,7 +61,7 @@ while failCount < 100:
     parser = RecipeParser()
     parser.feed(result)
     parser.close()
-    writeFile(''.join(parser.data), pageID)
-    time.sleep(1)
+    writeFile(''.join(parser.data), filename)
+    time.sleep(1.5)
     
     
