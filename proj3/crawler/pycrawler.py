@@ -50,13 +50,17 @@ pageID = 8128
 while failCount < 100:
     filename = str(pageID)
     print(pageID, failCount)
-    result = sendRequest("https://www.allrecipes.com/recipe/{}/dirt-cake-i/print/?recipeType=Recipe&servings=10&isMetric=false".format(pageID))
+    try:
+        result = sendRequest("https://www.allrecipes.com/recipe/{}/dirt-cake-i/print/?recipeType=Recipe&servings=10&isMetric=false".format(pageID))
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            failCount += 1
+            continue
+        else:
+            raise
+    
     pageID += 1
-    
-    if "<h1>Bummer.</h1>" in result:
-        failCount += 1
-        continue
-    
+      
     failCount = 0
     parser = RecipeParser()
     parser.feed(result)
