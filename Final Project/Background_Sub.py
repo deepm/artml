@@ -10,9 +10,7 @@ while(1):
     fgmask = cv.morphologyEx(fgmask, cv.MORPH_OPEN, kernel)
     foreground_mask = cv.bitwise_and(frame,frame,mask=255 - fgmask)
     foreground_mask= cv.inpaint(foreground_mask,fgmask,3,cv.INPAINT_TELEA)
-    #background_mask = cv.bitwise_and(frame,frame,mask=fgmask)
-    #background_mask = cv.inpaint(background_mask,fgmask,3,cv.INPAINT_TELEA)
-    #print(frame.shape, fgmask.shape, realmask.shape)
+    
     cv.imshow('frame',foreground_mask)
     k = cv.waitKey(30) & 0xff
     if k == 27:
